@@ -1,0 +1,6 @@
+framework module VuManhFramework {
+  umbrella header "VuManhFramework.h"
+  export *
+
+  module * { export * }
+}
