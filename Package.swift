@@ -14,7 +14,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "NavigationLibSPMCarMap",
-            url: "https://github.com/vumanh0904/NavigationLibSPMCarMap/releases/download/1.0.1/NavigationSDKFramework.xcframework.zip",
+            url: "https://github.com/vumanh0904/NavigationLibSPMCarMap/releases/download/1.0.2/NavigationSDKFramework.xcframework.zip",
             checksum: "4b0f34f0f36f1fc4eba2c0f4e21680a1c4c11f33d4576752fd2494d870facb46"
         )
     ]
