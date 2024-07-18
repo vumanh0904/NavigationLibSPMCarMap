@@ -19,5 +19,9 @@ let package = Package(
         .testTarget(
             name: "NavigationLibSPMCarMapTests",
             dependencies: ["NavigationLibSPMCarMap"]),
+        .binaryTarget(
+            name: "NavigationSDKFramework",
+            url: "https://github.com/vumanh0904/NavigationLibSPMCarMap/releases/download/1.0.1/NavigationSDKFramework.xcframework.zip",
+        ),
     ]
 )
