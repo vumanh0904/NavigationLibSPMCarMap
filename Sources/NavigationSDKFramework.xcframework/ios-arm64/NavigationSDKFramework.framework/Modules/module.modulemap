@@ -1,0 +1,6 @@
+framework module NavigationSDKFramework {
+  umbrella header "NavigationSDKFramework.h"
+  export *
+
+  module * { export * }
+}

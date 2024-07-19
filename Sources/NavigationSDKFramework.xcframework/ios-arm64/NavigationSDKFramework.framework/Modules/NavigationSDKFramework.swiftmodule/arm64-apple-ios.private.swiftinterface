@@ -1,0 +1,257 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name NavigationSDKFramework
+import AVFoundation
+import Alamofire
+import Combine
+import CoreLocation
+import Foundation
+import GameplayKit
+import LanguageManagerSwiftUI
+import MapboxCoreNavigation
+import MapboxDirections
+import MapboxMaps
+import MapboxNavigation
+@_exported import NavigationSDKFramework
+import Network
+import Polyline
+import SQLite
+import SQLite3
+import Swift
+import SwiftUI
+import Swinject
+import Turf
+import UIKit
+import Zip
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@objc @_hasMissingDesignatedInitializers @available(iOS 15.0, *)
+@_Concurrency.MainActor(unsafe) public class NavigationMapViewController : UIKit.UIViewController, MapboxMaps.LocationConsumer {
+  @_Concurrency.MainActor(unsafe) public var overlaySimplificationTolerance: Swift.Double
+  @_Concurrency.MainActor(unsafe) @objc public func locationUpdate(newLocation: MapboxMaps.Location)
+  @_Concurrency.MainActor(unsafe) public func closestLocation(locations: [CoreLocation.CLLocation], closestToLocation location: CoreLocation.CLLocation, snappedCurrent: CoreLocation.CLLocation) -> CoreLocation.CLLocation?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class ImageConfig : Foundation.ObservableObject {
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public enum BaseContainer {
+  public static var shared: Swinject.Container
+  public static func resolve<Service>(_ serviceType: Service.Type) -> Service
+}
+public enum Zooms {
+}
+public protocol ExampleProtocol : AnyObject {
+  func resourceOptions() -> MapboxMaps.ResourceOptions
+  func finish()
+}
+public protocol NonMapViewExampleProtocol : NavigationSDKFramework.ExampleProtocol {
+}
+extension NavigationSDKFramework.ExampleProtocol {
+  public func resourceOptions() -> MapboxMaps.ResourceOptions
+  public func finish()
+}
+extension NavigationSDKFramework.ExampleProtocol where Self : UIKit.UIViewController {
+  public func showAlert(with title: Swift.String)
+}
+@available(iOS 15.0, *)
+public struct ContentView : SwiftUI.View {
+  public init()
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s22NavigationSDKFramework11ContentViewV4bodyQrvp", 0) __
+}
+public struct SearchGeocodeRequestDto : Swift.Codable {
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum Constants {
+}
+public enum Metrics {
+}
+@_hasMissingDesignatedInitializers open class DefaultViewModel : Foundation.ObservableObject {
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public enum Fonts {
+}
+public struct TripDirectionRequestDto : Swift.Codable {
+  public let origin: Swift.String
+  public let waypoints: Swift.String
+  public let destination: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension Foundation.URLRequest {
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  public var dataTaskPublisher: Foundation.URLSession.DataTaskPublisher {
+    get
+  }
+}
+public struct SearchRequestDto : Swift.Codable {
+  public let searchText: Swift.String
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public let statusSearch: Swift.Bool
+  public let searchFavourite: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MessageHelper {
+}
+public enum URLEncoding : Swift.String {
+  case `default`
+  case percentEncoded
+  case xWWWFormURLEncoded
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum BodyEncoding : Swift.String {
+  case JSON
+  case xWWWFormURLEncoded
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct NavigationRequestDto : Swift.Codable {
+  public let origin: Swift.String
+  public let destination: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum RouterContants {
+}
+extension Foundation.CharacterSet {
+  public static let nkURLQueryAllowed: Foundation.CharacterSet
+}
+public struct Example {
+  public static let finishNotificationName: Foundation.Notification.Name
+  public var title: Swift.String
+  public var description: Swift.String
+  public var testTimeout: Swift.Double
+  public var type: any NavigationSDKFramework.ExampleProtocol.Type
+  public func makeViewController() -> UIKit.UIViewController
+}
+public enum TypeTrafficContants {
+}
+@_hasMissingDesignatedInitializers final public class NetworkConfig {
+  @objc deinit
+}
+public struct LocationRequestDto : Swift.Codable {
+  public let placeID: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum Colors {
+}
+@objc @_hasMissingDesignatedInitializers @available(iOS 15.0, *)
+@_Concurrency.MainActor(unsafe) open class UserPuckCourseView : UIKit.UIView, MapboxNavigation.CourseUpdatable {
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var puckColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, message: "No stale status in active navigation anymore.")
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var stalePuckColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var fillColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shadowColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @available(*, deprecated, message: "No stale status in active navigation anymore.")
+  @_Concurrency.MainActor(unsafe) public var staleRefreshInterval: Swift.Double
+  @available(*, deprecated, message: "No stale status in active navigation anymore.")
+  @_Concurrency.MainActor(unsafe) public var staleInterval: Swift.Double
+  @_Concurrency.MainActor(unsafe) public var minimizesInOverview: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open func update(location: CoreLocation.CLLocation, pitch: CoreFoundation.CGFloat, direction: CoreLocation.CLLocationDegrees, animated: Swift.Bool, navigationCameraState: MapboxNavigation.NavigationCameraState)
+  @objc deinit
+}
+public struct WeatherRequestDto : Swift.Codable {
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct DirectionRequestDto : Swift.Codable {
+  public let origin: Swift.String
+  public let destination: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LoginRequestDto : Swift.Codable {
+  public let activeCode: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum HTTPMethod : Swift.Equatable {
+  case get
+  case post
+  case put
+  case delete
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: NavigationSDKFramework.HTTPMethod, b: NavigationSDKFramework.HTTPMethod) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum MaxSpeedContants {
+}
+extension Swift.Encodable {
+  public var dictionary: [Swift.String : Any]? {
+    get
+  }
+  public func toParameters() -> [Swift.String : Any]
+  public func toJsonString(pretty: Swift.Bool = true) -> Swift.String
+  public var asQueryString: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class BuildConfig {
+  @objc deinit
+}
+extension Combine.Publisher where Self.Failure == Swift.Never {
+  public func sinkOnMain(receiveValue: @escaping ((Self.Output) -> Swift.Void)) -> Combine.AnyCancellable
+}
+extension Combine.Publisher {
+  public func sinkOnMain(receiveCompletion: @escaping ((Combine.Subscribers.Completion<Self.Failure>) -> Swift.Void)) -> Combine.AnyCancellable
+}
+extension Combine.Publisher {
+  public func sinkOnMain(receiveCompletion: @escaping ((Combine.Subscribers.Completion<Self.Failure>) -> Swift.Void), receiveValue: @escaping ((Self.Output) -> Swift.Void)) -> Combine.AnyCancellable
+}
+public enum Pitch {
+}
+public protocol NetworkConfigType {
+  var baseURL: Swift.String { get }
+}
+@available(iOS 15.0, *)
+extension Foundation.Bundle {
+  public class var mapboxNavigation: Foundation.Bundle {
+    get
+  }
+}
+extension UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
+}
+extension NavigationSDKFramework.URLEncoding : Swift.Equatable {}
+extension NavigationSDKFramework.URLEncoding : Swift.Hashable {}
+extension NavigationSDKFramework.URLEncoding : Swift.RawRepresentable {}
+extension NavigationSDKFramework.BodyEncoding : Swift.Equatable {}
+extension NavigationSDKFramework.BodyEncoding : Swift.Hashable {}
+extension NavigationSDKFramework.BodyEncoding : Swift.RawRepresentable {}
+extension NavigationSDKFramework.HTTPMethod : Swift.Hashable {}
